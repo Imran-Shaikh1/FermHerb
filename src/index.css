@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ayurvedic earthy color palette - Light Mode */
+    --background: 40 20% 97%;
+    --foreground: 25 15% 15%;
+
+    --card: 40 25% 98%;
+    --card-foreground: 25 15% 15%;
+
+    --popover: 40 25% 98%;
+    --popover-foreground: 25 15% 15%;
+
+    /* Deep forest green as primary */
+    --primary: 140 45% 25%;
+    --primary-foreground: 40 25% 98%;
+
+    /* Warm beige secondary */
+    --secondary: 40 30% 88%;
+    --secondary-foreground: 25 15% 15%;
+
+    /* Soft sage muted */
+    --muted: 100 20% 90%;
+    --muted-foreground: 25 8% 45%;
+
+    /* Terracotta accent */
+    --accent: 15 65% 70%;
+    --accent-foreground: 40 25% 98%;
+
+    /* Success green */
+    --success: 140 50% 40%;
+    --success-foreground: 40 25% 98%;
+
+    /* Warning terracotta */
+    --warning: 25 85% 65%;
+    --warning-foreground: 40 25% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 25% 98%;
+
+    --border: 40 15% 85%;
+    --input: 40 15% 94%;
+    
+    /* Lighter placeholder colors for better UX */
+    --placeholder-light: 40 10% 65%;
+    --ring: 140 45% 25%;
+
+    --radius: 0.75rem;
+
+    /* Premium gold accents for consumer portal */
+    --gold: 45 95% 60%;
+    --gold-foreground: 25 15% 15%;
+
+    /* Sidebar with sage theme */
+    --sidebar-background: 100 15% 95%;
+    --sidebar-foreground: 25 15% 25%;
+    --sidebar-primary: 140 45% 25%;
+    --sidebar-primary-foreground: 40 25% 98%;
+    --sidebar-accent: 100 20% 88%;
+    --sidebar-accent-foreground: 25 15% 25%;
+    --sidebar-border: 100 15% 80%;
+    --sidebar-ring: 140 45% 25%;
+
+    /* Extended earthy color palette */
+    --nature-primary: 140 45% 25%;
+    --nature-secondary: 120 30% 35%;
+    --earth-light: 40 25% 85%;
+    --earth-medium: 35 20% 65%;
+    --earth-dark: 25 15% 15%;
+    --earth-background: 40 15% 92%;
+    --warm-background: 35 20% 94%;
+    --warm-accent: 15 65% 70%;
+    --warm-secondary: 25 40% 75%;
+    --nature-background: 120 15% 90%;
+  }
+
+  .dark {
+    /* Dark mode with earthy tones - DEFAULT THEME */
+    --background: 25 15% 8%;
+    --foreground: 40 25% 95%;
+
+    --card: 25 15% 12%;
+    --card-foreground: 40 25% 95%;
+
+    --popover: 25 15% 12%;
+    --popover-foreground: 40 25% 95%;
+
+    --primary: 140 35% 65%;
+    --primary-foreground: 25 15% 8%;
+
+    --secondary: 40 15% 18%;
+    --secondary-foreground: 40 25% 95%;
+
+    --muted: 40 10% 15%;
+    --muted-foreground: 40 8% 65%;
+
+    --accent: 15 50% 55%;
+    --accent-foreground: 40 25% 95%;
+
+    --success: 140 40% 50%;
+    --success-foreground: 25 15% 8%;
+
+    --warning: 25 70% 60%;
+    --warning-foreground: 25 15% 8%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 40 25% 95%;
+
+    --border: 40 10% 20%;
+    --input: 40 10% 20%;
+    
+    /* Dark mode placeholder */
+    --placeholder-light: 40 8% 55%;
+    --ring: 140 35% 65%;
+
+    --gold: 45 85% 70%;
+    --gold-foreground: 25 15% 8%;
+
+    --sidebar-background: 25 15% 10%;
+    --sidebar-foreground: 40 20% 85%;
+    --sidebar-primary: 140 35% 65%;
+    --sidebar-primary-foreground: 25 15% 8%;
+    --sidebar-accent: 40 10% 18%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 40 10% 18%;
+    --sidebar-ring: 140 35% 65%;
+
+    /* Extended earthy color palette - Dark Mode */
+    --nature-primary: 140 35% 65%;
+    --nature-secondary: 120 25% 55%;
+    --earth-light: 40 15% 25%;
+    --earth-medium: 35 12% 35%;
+    --earth-dark: 40 25% 95%;
+    --earth-background: 25 15% 10%;
+    --warm-background: 25 15% 8%;
+    --warm-accent: 15 50% 55%;
+    --warm-secondary: 25 30% 45%;
+    --nature-background: 120 10% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground dark;
+  }
+}
+
+/* Ayurvedic themed animations */
+@keyframes celebrate-leaves {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes story-card-enter {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes story-card-exit {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--success));
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--success)), 0 0 30px hsl(var(--success));
+  }
+}
+
+@keyframes leaf-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.celebrate-leaves {
+  animation: celebrate-leaves 3s ease-in-out infinite;
+}
+
+.story-card-enter {
+  animation: story-card-enter 0.5s ease-out;
+}
+
+.story-card-exit {
+  animation: story-card-exit 0.5s ease-in;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.leaf-float {
+  animation: leaf-float 3s ease-in-out infinite;
+}
